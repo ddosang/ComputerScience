@@ -3,9 +3,9 @@
 #include <mpi.h>
 
 int main(void) {
-	//ÇÁ·Î¼¼½º 2°³·Î ½ÇÇà
+	//í”„ë¡œì„¸ìŠ¤ 2ê°œë¡œ ì‹¤í–‰
 
-	int my_rank, size; //process ¹øÈ£¿Í °³¼ö
+	int my_rank, size; //process ë²ˆí˜¸ì™€ ê°œìˆ˜
 	int A[5][5] = { 0 };
 	int B[5][5] = { 0 };
 	MPI_Status status;
@@ -16,7 +16,7 @@ int main(void) {
 	MPI_Comm_size(MPI_COMM_WORLD, &size);
 
 
-	//data »ı¼º
+	//data ìƒì„±
 	if (my_rank == 0) {
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
@@ -31,7 +31,7 @@ int main(void) {
 		}
 	}
 
-	//datatype Á¤ÀÇ
+	//datatype ì •ì˜
 	MPI_Type_vector(5, 1, 5, MPI_INT, &columnType);
 	MPI_Type_commit(&columnType);
 
@@ -40,16 +40,16 @@ int main(void) {
 	if (my_rank == 0) {
 		MPI_Sendrecv(&A[0][3], 1, columnType, 1, 3, &A[0][4], 1, columnType, 1, 2, MPI_COMM_WORLD, &status);
 
-		//¿­ ¹øÈ£¸¦ tag·Î ÀÌ¿ë
-		//bÀÇ 2¹ø¿­ ¹Ş¾Æ¼­ aÀÇ 4¹ø¿­¿¡ ÀúÀå
+		//ì—´ ë²ˆí˜¸ë¥¼ tagë¡œ ì´ìš©
+		//bì˜ 2ë²ˆì—´ ë°›ì•„ì„œ aì˜ 4ë²ˆì—´ì— ì €ì¥
 
 	} else if (my_rank == 1) {
 		MPI_Sendrecv(&B[0][2], 1, columnType, 0, 2, &B[0][4], 1, columnType, 0, 3, MPI_COMM_WORLD, &status);
-		//aÀÇ 3¹ø¿­ ¹Ş¾Æ¼­ bÀÇ 4¹ø ¿­¿¡ ÀúÀå.
+		//aì˜ 3ë²ˆì—´ ë°›ì•„ì„œ bì˜ 4ë²ˆ ì—´ì— ì €ì¥.
 	}
 
 
-	//Àü¼Û, ¹Ş±â ³¡³ª°í Ãâ·Â
+	//ì „ì†¡, ë°›ê¸° ëë‚˜ê³  ì¶œë ¥
 	if (my_rank == 1) {
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
