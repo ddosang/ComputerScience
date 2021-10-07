@@ -4,7 +4,7 @@
 
 int main(void) {
 
-	int my_rank, size; //process ¹øÈ£¿Í °³¼ö
+	int my_rank, size; //process Â¹Ã¸ÃˆÂ£Â¿Ã Â°Â³Â¼Ã¶
 	int A[10][10];
 
 	MPI_Init(NULL, NULL);
