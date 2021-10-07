@@ -1,0 +1,74 @@
+//1771076 임은지 HW1
+#include <stdio.h>
+#include <stdlib.h>
+#include <mpi.h>
+
+#define MAX_SIZE 1000 //A 배열에 채울 원소의 개수 1000을 MAX_SIZE 로 정의
+
+int main(void) {
+
+	int my_rank, size; //process 번호와 개수
+
+	int A[MAX_SIZE];
+
+	int odd_count = 0, even_count = 0; //프로세스 각각이 세는 짝수, 홀수 count 
+	int total_odd_count = 0, total_even_count = 0; //전체 짝수, 홀수 count
+
+
+	//MPI init
+	MPI_Init(NULL, NULL);
+	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
+	MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+
+	int scatter_size = MAX_SIZE / size; //각 프로세스가 할당받을 원소의 개수를 scatter_size로 선언.
+
+	//int* B = (int*)malloc(MAX_SIZE / size);
+
+	int B[scatter_size]; //프로세스 각각이 A 배열을 균등히 할당받을 배열 B
+
+
+
+	if (my_rank == 0) {
+		//프로세스 0번은 A 배열을 생성
+
+		for (int i = 0; i < MAX_SIZE; i++) {
+			//만약 5로 나누어서 나머지가 0,1 이면 배열을 1(홀수)로
+			if (i % 5 == 0 || i % 5 == 1)
+				A[i] = 1;
+			//나머지가 2,3,4 이면 배열을 2(짝수)로 채운다.
+			else
+				A[i] = 2;
+		}
+		// 결과적으로 400개의 홀수, 600개의 짝수로 채워진 배열이 된다.
+	}
+
+
+	//process 들에게 scatter_size 만큼 나눠주기.
+	MPI_Scatter(A, scatter_size, MPI_INT, B, scatter_size, MPI_INT, 0, MPI_COMM_WORLD);
+	//MPI_Scatter(송신 버퍼의 주소, 각 프로세스로 보내지는 변수 개수, 변수형, 수신 버퍼의 주소, 각 프로세스가 받는 원소 개수, 변수형, 송신 프로세스의 랭크, 통신자)
+
+	
+	//printf("%d. \n", my_rank);
+	for (int i = 0; i < scatter_size; i++) {
+		if (B[i] % 2 == 0) {
+			even_count++; //짝수 개수 세기
+		}
+		else
+			odd_count++; //홀수 개수 세기
+	}
+
+	
+	MPI_Reduce(&even_count, &total_even_count, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+	MPI_Reduce(&odd_count, &total_odd_count, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+	//even_count 와 odd_count 를 각각 total_even_count, total odd_count 에 Reduce
+
+	if (my_rank == 0) {
+		printf("odd_count : %d, even_count: %d\n", total_odd_count, total_even_count);
+	} //0번이 모아왔으므로 0번 프로세스가 최종 홀수, 짝수 개수 출력.
+
+	MPI_Finalize();
+
+	return 0;
+}
+
