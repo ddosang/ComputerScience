@@ -1,0 +1,252 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#define _CRT_SECURE_NO_WARNINGS
+#define MAX_STACK_SIZE 81
+
+typedef int element;
+typedef struct {
+	element stack[MAX_STACK_SIZE];
+	int top;
+}StackType;
+typedef struct StackNode {
+	element data;
+	struct StackNode *link;
+}StackNode;
+typedef struct {
+	StackNode *top;
+}LinkedStackType;
+//stack, 연결리스트 구조체
+
+void initA(StackType *s) {
+	s->top = -1;
+}
+int is_emptyA(StackType *s) {
+	return (s->top == -1);
+}
+int is_fullA(StackType *s) {
+	return (s->top == (MAX_STACK_SIZE - 1));
+}
+void pushA(StackType *s, element item) {
+	if (is_fullA(s)) {
+		printf("스택 포화 에러\n");
+		return;
+	}
+	else s->stack[++(s->top)] = item;
+}
+element popA(StackType *s) {
+	if (is_emptyA(s)) {
+		printf("\"stack empty\" ");
+		return -1;
+	}
+	else return (s->stack[(s->top)--]);
+}
+element peekA(StackType *s) {
+	if (is_emptyA(s)) {
+		printf("\"stack empty\" ");
+		return -1;
+	}
+	else return (s->stack[s->top]);
+}
+// stack 관련 함수
+
+void initL(LinkedStackType *s) {
+	s->top = NULL;
+}
+int is_emptyL(LinkedStackType *s) {
+	return (s->top == NULL);
+}
+void pushL(LinkedStackType *s, element item) {
+	StackNode *temp = (StackNode *)malloc(sizeof(StackNode));
+	if (temp == NULL) {
+		printf("메모리 할당에러\n");
+	}
+	else {
+		temp->data = item;
+		temp->link = s->top;
+		s->top = temp;
+	}
+}
+element popL(LinkedStackType *s) {
+	if (is_emptyL(s)) {
+		printf("\"stack empty\" ");
+		return -1;
+	}
+	else {
+		StackNode *temp = s->top;
+		int item = temp->data;
+		s->top = s->top->link;
+		free(temp);
+		return item;
+	}
+}
+element peekL(LinkedStackType *s) {
+	if (is_emptyL(s)) {
+		printf("\"stack empty\" ");
+		return -1;
+	}
+	else {
+		return s->top->data;
+	}
+}
+//연결리스트 관련 함수
+
+int eval(char exp[], int *a) { //후위 표기 수식 계산 함수
+	int op1, op2, value, i = 0;
+	int len = strlen(exp);
+	char ch;
+	StackType s;
+
+	initA(&s);
+	for (i = 0; i < *a; i++) {
+		ch = exp[i];
+		if (ch != '+' && ch != '-' && ch != '/'&&ch != '*' && ch != '%' && ch != '^') {
+			value = ch - '0';
+			pushA(&s, value);
+		}
+		else {
+			op2 = popA(&s);
+			op1 = popA(&s);
+			switch (ch) {
+			case '+': pushA(&s, op1 + op2); break;
+			case '-': pushA(&s, op1 - op2); break;
+			case '*': pushA(&s, op1 * op2); break;
+			case '/': pushA(&s, (float)op1 / (float)op2); break;
+			case '%': pushA(&s, op1 % op2); break;
+			case '^': pushA(&s, pow(op1 , op2)); break;
+			}
+		}
+	}
+	return popA(&s);
+}
+
+int prec(char ch) {
+
+	switch (ch) {
+
+	case '^': return 2;
+	case'*': case '/': case '%': return 1;
+	case '+': case'-': return 0;
+	}
+	return -1;
+}
+
+
+char* infix_to_postfix(StackType *s, LinkedStackType *l, char exp[], int *a) {
+	int len = strlen(exp), compare;
+	char ch, cc[80];
+	char* result = (char*)malloc(80 * sizeof(char));
+	int value;
+	element e;
+	int j = 0, k = 0, m = 0;
+
+	initA(s);
+	initL(l);
+	for (int i = 0; i < len; i++) {
+		ch = exp[i];
+		if (ch >= '0' && ch <= '9') {
+			value = ch - '0';
+			cc[j] = value;
+			j++;
+			pushA(s, value);
+		}
+		else {
+			switch (ch) {
+			case '^':
+			case '*': case '/': case '%': case '+': case '-':
+				compare = prec(ch);
+				if (ch == '^') {
+					compare = 3;
+				} // 비교하기 전에 ^연산의 ICP를 하나 높이고 시작.
+				while (!is_emptyL(l) && (compare <= prec(peekL(l)))) {
+					for (int i = k; i < j; i++) {
+						printf("%d ", s->stack[i]);
+						result[m] = s->stack[i] + '0';
+						m++; k++;
+					}
+					e = popL(l);
+					result[m] = e;
+					m++;
+					printf("%c ", e);
+				}
+				pushL(l, ch);
+				break;
+
+			case '(': pushL(l, ch); break;
+			case ')':
+				while (true) {
+					e = peekL(l);
+					if (e == '(') {
+						popL(l);
+						break;
+					}
+					else {
+						for (int i = k; i < j; i++) {
+							printf("%d ", s->stack[i]);
+							result[m] = s->stack[i] + '0';
+							m++; k++;
+						}
+						e = popL(l);
+						result[m] = e;
+						m++;
+						printf("%c ", e);
+					}
+				} break;
+			default: break;
+			}
+		}
+	}
+	for (int i = k; i < j; i++) {
+		printf("%d ", s->stack[i]);
+		result[m] = s->stack[i] + '0';
+		m++; k++;
+	}
+	while (is_emptyL(l) != true) {
+		e = popL(l);
+		printf("%c ", e);
+		result[m] = e;
+		m++;
+	}printf(";");
+
+	*a = m;
+	return result;
+}
+
+
+int main(void) {
+	FILE *fp;
+	char exp[20][80];
+	int i = 0,j = 0, n, a = 0, result;
+	char *str; char *str2;
+	StackType *s = (StackType*)malloc(sizeof(StackType));
+	LinkedStackType *l = (LinkedStackType*)malloc(sizeof(LinkedStackType));
+
+	printf("n : ");
+	scanf("%d", &n);
+
+	fp = fopen("infix.txt", "r");
+
+	while (!feof(fp)) {
+		fgets(exp[i], 80, fp);
+		i++;
+	}
+
+	fclose(fp);
+
+	for (int i = 0; i < n; i++) {
+		printf("%s ", exp[i]);
+		str = infix_to_postfix(s, l, exp[i], &a);
+		str2 = (char*)malloc(a );
+		printf("\n");
+		for (int j = 0; j < a; j++) {
+			printf("%c ", str[j]);
+			str2[j] = str[j];
+		}
+		printf("\n");
+		result = eval(str2, &a);
+		printf("result = %d\n", result);
+	}
+	
+}
+

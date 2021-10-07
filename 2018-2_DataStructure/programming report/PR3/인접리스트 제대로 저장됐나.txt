@@ -1,0 +1,10 @@
+GraphNode *node = (GraphNode *)malloc(sizeof(GraphNode));
+
+	for (i = 0; i < g->n; i++) {
+		node = g->adj_list[i];
+		while (node != NULL) {
+			printf("%d ", node->vertex);
+			node = node->link;
+		}
+		printf("\n");
+	}
