@@ -3,9 +3,9 @@
 #include <mpi.h>
 
 int main(void) {
-	//ÇÁ·Î¼¼½º 5°³·Î ½ÇÇà
+	//í”„ë¡œì„¸ìŠ¤ 5ê°œë¡œ ì‹¤í–‰
 
-	int my_rank, size; //process ¹øÈ£¿Í °³¼ö
+	int my_rank, size; //process ë²ˆí˜¸ì™€ ê°œìˆ˜
 	int A[10][10];
 	int B[2][10];
 
@@ -20,8 +20,8 @@ int main(void) {
 				A[i][j] = i * 10 + j;
 	}
 
-	MPI_Scatter(A, 20, MPI_INT, B, 20, MPI_INT, 0, MPI_COMM_WORLD); //2Çà¾¿ ³ª´®.
-	//MPI_Scatter(³ª´­º¯¼ö,º¯¼öÅ©±â,º¯¼öÇü,º¸³½ °ª ¹Ş´Â ¼ö,Å©±â,º¯¼öÇü,³ëµå¼ø¹ø,Åë½ÅÀÚ)
+	MPI_Scatter(A, 20, MPI_INT, B, 20, MPI_INT, 0, MPI_COMM_WORLD); //2í–‰ì”© ë‚˜ëˆ”.
+	//MPI_Scatter(ë‚˜ëˆŒë³€ìˆ˜,ë³€ìˆ˜í¬ê¸°,ë³€ìˆ˜í˜•,ë³´ë‚¸ ê°’ ë°›ëŠ” ìˆ˜,í¬ê¸°,ë³€ìˆ˜í˜•,ë…¸ë“œìˆœë²ˆ,í†µì‹ ì)
 	
 
 
