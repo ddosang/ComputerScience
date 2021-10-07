@@ -28,7 +28,6 @@ int main(void) {
 	for (int j = 40; j < 60; j++)
 		R[0][j] = 200.0; //벽난로의 온도 (계속 유지)
 
-
 	//MPI 실행을 위한 함수.
 	MPI_Init(NULL, NULL);
 	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
