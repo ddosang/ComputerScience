@@ -122,6 +122,7 @@ int main(void) {
 		}
 	} 
 	
+	
 
 	//계산 끝나면 배열 합쳐야함. R배열의 1행에 합쳐온다.
 	MPI_Gather(&smallR[1][0], 25, rowType, &R[1][0], 25, rowType, 0, MPI_COMM_WORLD);
