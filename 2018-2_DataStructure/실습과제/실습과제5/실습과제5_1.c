@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #define MAX_STACK_SIZE 100
 
-/* 1) ÃÖ´ë Å©±â°¡ MAX_STACK_SIZE(¿¹ : 100)ÀÎ ¹è¿­À» ÀÌ¿ëÇÏ¿© ½ºÅÃÀ» ±¸ÇöÇÑ´Ù. Áï, ¹è¿­ ½ºÅÃ¿¡ »ğÀÔÇÏ´Â ¿¬»ê
-pushA(), »èÁ¦ÇÏ¿© Ãâ·ÂÇÏ´Â ¿¬»ê popA(), ½ºÅÃ topÀÇ ¿ø¼Ò¸¦ Ãâ·ÂÇÏ´Â ¿¬»ê peekA()À» C ¾ğ¾î·Î ±¸ÇöÇÑ´Ù.
-2) ´Ü¼ø ¿¬°á¸®½ºÆ®¸¦ ÀÌ¿ëÇÏ¿© ½ºÅÃÀ» ±¸ÇöÇÑ´Ù. Áï, ¿¬°á ½ºÅÃ¿¡ »ğÀÔÇÏ´Â ¿¬»ê pushL(), »èÁ¦ÇÏ¿© Ãâ·ÂÇÏ´Â ¿¬»ê
-popL(), ½ºÅÃ topÀÇ ¿ø¼Ò¸¦ Ãâ·ÂÇÏ´Â ¿¬»ê peekL()À» C ¾ğ¾î·Î ±¸ÇöÇÑ´Ù.
-3) Main ÇÔ¼ö¿¡¼­ ¾Æ·¡ÀÇ ¿¹ 1°ú ¿¹ 2ÀÇ push(), pop(), peek() ¿¬»êÀ» °¢°¢ Â÷·Ê´ë·Î ¼öÇàÇÏ¿© ±× °á°ú°¡ ¸Â´ÂÁö Ãâ·Â
-ÇÏ¿© È®ÀÎÇÑ´Ù */
+/* 1) ìµœëŒ€ í¬ê¸°ê°€ MAX_STACK_SIZE(ì˜ˆ : 100)ì¸ ë°°ì—´ì„ ì´ìš©í•˜ì—¬ ìŠ¤íƒì„ êµ¬í˜„í•œë‹¤. ì¦‰, ë°°ì—´ ìŠ¤íƒì— ì‚½ì…í•˜ëŠ” ì—°ì‚°
+pushA(), ì‚­ì œí•˜ì—¬ ì¶œë ¥í•˜ëŠ” ì—°ì‚° popA(), ìŠ¤íƒ topì˜ ì›ì†Œë¥¼ ì¶œë ¥í•˜ëŠ” ì—°ì‚° peekA()ì„ C ì–¸ì–´ë¡œ êµ¬í˜„í•œë‹¤.
+2) ë‹¨ìˆœ ì—°ê²°ë¦¬ìŠ¤íŠ¸ë¥¼ ì´ìš©í•˜ì—¬ ìŠ¤íƒì„ êµ¬í˜„í•œë‹¤. ì¦‰, ì—°ê²° ìŠ¤íƒì— ì‚½ì…í•˜ëŠ” ì—°ì‚° pushL(), ì‚­ì œí•˜ì—¬ ì¶œë ¥í•˜ëŠ” ì—°ì‚°
+popL(), ìŠ¤íƒ topì˜ ì›ì†Œë¥¼ ì¶œë ¥í•˜ëŠ” ì—°ì‚° peekL()ì„ C ì–¸ì–´ë¡œ êµ¬í˜„í•œë‹¤.
+3) Main í•¨ìˆ˜ì—ì„œ ì•„ë˜ì˜ ì˜ˆ 1ê³¼ ì˜ˆ 2ì˜ push(), pop(), peek() ì—°ì‚°ì„ ê°ê° ì°¨ë¡€ëŒ€ë¡œ ìˆ˜í–‰í•˜ì—¬ ê·¸ ê²°ê³¼ê°€ ë§ëŠ”ì§€ ì¶œë ¥
+í•˜ì—¬ í™•ì¸í•œë‹¤ */
 
 typedef int element;
 typedef struct {
@@ -33,7 +33,7 @@ int is_fullA(StackType *s) {
 }
 void pushA(StackType *s, element e) {
 	if (is_fullA(s)) {
-		printf("½ºÅÃ Æ÷È­ ¿¡·¯\n");
+		printf("ìŠ¤íƒ í¬í™” ì—ëŸ¬\n");
 		return;
 	}
 	else s->stack[++(s->top)] = e;
@@ -62,7 +62,7 @@ int is_emptyL(LinkedStackType *s) {
 void pushL(LinkedStackType *s, element e) {
 	StackNode *temp = (StackNode *)malloc(sizeof(StackNode));
 	if (temp == NULL) {
-		printf("¸Ş¸ğ¸® ÇÒ´ç¿¡·¯\n");
+		printf("ë©”ëª¨ë¦¬ í• ë‹¹ì—ëŸ¬\n");
 		return;
 	}
 	else {
@@ -96,7 +96,7 @@ int main(void) {
 	StackType *s = (StackType *)malloc(sizeof(StackType));
 	LinkedStackType *ss = (LinkedStackType *)malloc(sizeof(LinkedStackType));
 	
-	printf("¹è¿­ : ");
+	printf("ë°°ì—´ : ");
 	initA(s);
 	pushA(s, 'A');
 	peekA(s);
@@ -116,7 +116,7 @@ int main(void) {
 	popA(s);
 	printf("\n");
 	
-	printf("¿¬°á¸®½ºÆ® : ");
+	printf("ì—°ê²°ë¦¬ìŠ¤íŠ¸ : ");
 	initL(ss);
 	pushL(ss, 'A');
 	peekL(ss);
