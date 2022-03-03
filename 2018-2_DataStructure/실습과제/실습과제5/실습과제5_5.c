@@ -26,7 +26,7 @@ int is_fullA(StackType *s) {
 }
 void pushA(StackType *s, element e) {
 	if (is_fullA(s)) {
-		printf("½ºÅÃ Æ÷È­ ¿¡·¯\n");
+		printf("ìŠ¤íƒ í¬í™” ì—ëŸ¬\n");
 		return;
 	}
 	else s->stack[++(s->top)] = e;
@@ -55,7 +55,7 @@ int is_emptyL(LinkedStackType *s) {
 void pushL(LinkedStackType *s, element e) {
 	StackNode *temp = (StackNode *)malloc(sizeof(StackNode));
 	if (temp == NULL) {
-		printf("¸Ş¸ğ¸® ÇÒ´ç¿¡·¯\n");
+		printf("ë©”ëª¨ë¦¬ í• ë‹¹ì—ëŸ¬\n");
 		return;
 	}
 	else {
@@ -89,7 +89,7 @@ int main(void) {
 	StackType *s = (StackType *)malloc(sizeof(StackType));
 	LinkedStackType *ss = (LinkedStackType *)malloc(sizeof(LinkedStackType));
 
-	printf("¹è¿­ : ");
+	printf("ë°°ì—´ : ");
 	initA(s);
 	pushA(s, '1');
 	pushA(s, '2');
@@ -99,7 +99,7 @@ int main(void) {
 	popA(s);
 	printf("\n");
 
-	printf("¿¬°á¸®½ºÆ® : ");
+	printf("ì—°ê²°ë¦¬ìŠ¤íŠ¸ : ");
 	initL(ss);
 	pushL(ss, '1');
 	pushL(ss, '2');
