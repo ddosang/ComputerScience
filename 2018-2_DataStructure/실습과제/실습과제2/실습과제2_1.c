@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-//ÁÖ¾îÁø Å° °ªÀÌ ÀÖ´Â ÀÎµ¦½º¸¦ ¼øÂ÷Å½»öÀ¸·Î Ã£±â.
+//ì£¼ì–´ì§„ í‚¤ ê°’ì´ ìˆëŠ” ì¸ë±ìŠ¤ë¥¼ ìˆœì°¨íƒìƒ‰ìœ¼ë¡œ ì°¾ê¸°.
 int seq_Search(int list[], int n, int key, int* nn);
 
 int main(void) {
