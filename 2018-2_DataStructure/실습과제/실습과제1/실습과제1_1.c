@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-//¹è¿­ ³» ÃÖ´ë ÃÖ¼Ò¸¦ µ¿½Ã¿¡ Ã£´Â ÇÔ¼ö
+//ë°°ì—´ ë‚´ ìµœëŒ€ ìµœì†Œë¥¼ ë™ì‹œì— ì°¾ëŠ” í•¨ìˆ˜
 void findMaxMin(int n, int data[], int* max, int* min);
 
 int main(void) {
