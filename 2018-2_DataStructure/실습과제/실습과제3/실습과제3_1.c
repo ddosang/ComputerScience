@@ -6,7 +6,7 @@ typedef struct {
 	int coef[MAX_DEGREE];
 }polynomial;
 
-//ÁÖ¾îÁø µÎ°³ÀÇ ´ÙÇ×½Ä p(x)¿Í q(x)¿¡ ´ëÇØ¼­ µÎ ´ÙÇ×½ÄÀ» ´õÇÑ ´ÙÇ×½Ä r(x)¸¦ ±¸ÇÏ°í, ÁÖ¾îÁø x°ª¿¡ ´ëÇØ p(x)°ª, q(x)°ª ¹× r(x)ÀÇ °ªÀ» ±¸ÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÑ´Ù
+//ì£¼ì–´ì§„ ë‘ê°œì˜ ë‹¤í•­ì‹ p(x)ì™€ q(x)ì— ëŒ€í•´ì„œ ë‘ ë‹¤í•­ì‹ì„ ë”í•œ ë‹¤í•­ì‹ r(x)ë¥¼ êµ¬í•˜ê³ , ì£¼ì–´ì§„ xê°’ì— ëŒ€í•´ p(x)ê°’, q(x)ê°’ ë° r(x)ì˜ ê°’ì„ êµ¬í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•œë‹¤
 polynomial poly_add(polynomial A, polynomial B) {
 	polynomial C;
 	int Ai = 0, Bi = 0, Ci;
@@ -51,12 +51,12 @@ int main(void) {
 	scanf_s("%d", &p.degree);
 
 	for (int i = p.degree; i >= 0; i--)
-		scanf_s("%d ", &p.coef[i]); //p(x) ´ÙÇ×½Ä Â÷¼ö¿Í °è¼ö ÀÔ·Â¹ÞÀ½
+		scanf_s("%d ", &p.coef[i]); //p(x) ë‹¤í•­ì‹ ì°¨ìˆ˜ì™€ ê³„ìˆ˜ ìž…ë ¥ë°›ìŒ
 
 	scanf_s("%d", &q.degree);
 
 	for (int i = q.degree; i >= 0; i--)
-		scanf_s("%d ", &q.coef[i]); //q(x) ´ÙÇ×½Ä Â÷¼ö¿Í °è¼ö ÀÔ·Â¹ÞÀ½
+		scanf_s("%d ", &q.coef[i]); //q(x) ë‹¤í•­ì‹ ì°¨ìˆ˜ì™€ ê³„ìˆ˜ ìž…ë ¥ë°›ìŒ
 
 	printf("p(x) = ");
 	for (int i = p.degree; i >= 0; i--) {
@@ -64,7 +64,7 @@ int main(void) {
 		if (i >= 1) {
 			printf("+ ");
 		}
-	}printf("\n"); //p(x) Ãâ·Â
+	}printf("\n"); //p(x) ì¶œë ¥
 
 	printf("q(x) = ");
 	for (int i = q.degree; i >= 0; i--) {
@@ -72,7 +72,7 @@ int main(void) {
 		if (i >= 1) {
 			printf("+ ");
 		}
-	}printf("\n"); //q(x) Ãâ·Â
+	}printf("\n"); //q(x) ì¶œë ¥
 	printf("\n");
 	
 	r = poly_add(p, q); //r(x) = p(x) + q(x)
@@ -85,10 +85,10 @@ int main(void) {
 		if (i >= 1) {
 			printf("+ ");
 		}
-	}printf("\n"); //r(x) Ãâ·Â
+	}printf("\n"); //r(x) ì¶œë ¥
 
 
 	printf("p(%d) = %d  q(%d) = %d  r(%d)=%d\n", n1, poly_sub(p, n1), n1, poly_sub(q,n1), n1, poly_sub(r, n1));
 	printf("p(%d) = %d  q(%d) = %d  r(%d)=%d\n", n2, poly_sub(p, n2), n2, poly_sub(q, n2), n2, poly_sub(r, n2));
-	//´ëÀÔÇÏ¿© °ª Ãâ·Â
+	//ëŒ€ìž…í•˜ì—¬ ê°’ ì¶œë ¥
 }
