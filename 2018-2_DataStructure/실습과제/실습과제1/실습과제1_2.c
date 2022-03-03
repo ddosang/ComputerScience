@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-//Çà·ÄÀÇ °öÀ» ÇÏ´Â ÇÔ¼ö
+//Ã‡Ã Â·Ã„Ã€Ã‡ Â°Ã¶Ã€Â» Ã‡ÃÂ´Ã‚ Ã‡Ã”Â¼Ã¶
 void SmatrixMultiply(int n, int a[100][100], int b[100][100], int c[100][100]);
 
 int main(void) {
