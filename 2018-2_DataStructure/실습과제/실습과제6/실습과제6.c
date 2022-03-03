@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #define MAX_QUEUE_SIZE 10
 
-/* 1) ÃÖ´ë Å©±â°¡ MAX_QUEUE_SIZE(= 10)ÀÎ ¹è¿­À» ÀÌ¿ëÇÏ¿© È¯ÇüÅ¥(circular queue)¸¦ ±¸ÇöÇÑ´Ù. Áï, È¯Çü Å¥¿¡ »ðÀÔ
-ÇÏ´Â ¿¬»ê enqueue(), Á¦°ÅÇÏ¿© Ãâ·ÂÇÏ´Â ¿¬»ê dequeue(), Å¥¿¡¼­ ´ÙÀ½¿¡ Á¦°ÅÇÒ ¿ø¼Ò¸¦ Ãâ·ÂÇÏ´Â ¿¬»ê peek()À»
-±¸ÇöÇÏ¿© Å×½ºÆ®ÇÑ´Ù.
-2) Main ÇÔ¼ö¿¡¼­ ¾Æ·¡ÀÇ ¿¹ 1°ú ¿¹ 2ÀÇ enqueue(), dequeue(), peek() ¿¬»êÀ» Â÷·Ê´ë·Î ¼öÇàÇÏ¿© ±× °á°ú°¡ ¸Â´ÂÁö
-Ãâ·ÂÇÏ¿© È®ÀÎÇÑ´Ù. */
+/* 1) ìµœëŒ€ í¬ê¸°ê°€ MAX_QUEUE_SIZE(= 10)ì¸ ë°°ì—´ì„ ì´ìš©í•˜ì—¬ í™˜í˜•í(circular queue)ë¥¼ êµ¬í˜„í•œë‹¤. ì¦‰, í™˜í˜• íì— ì‚½ìž…
+í•˜ëŠ” ì—°ì‚° enqueue(), ì œê±°í•˜ì—¬ ì¶œë ¥í•˜ëŠ” ì—°ì‚° dequeue(), íì—ì„œ ë‹¤ìŒì— ì œê±°í•  ì›ì†Œë¥¼ ì¶œë ¥í•˜ëŠ” ì—°ì‚° peek()ì„
+êµ¬í˜„í•˜ì—¬ í…ŒìŠ¤íŠ¸í•œë‹¤.
+2) Main í•¨ìˆ˜ì—ì„œ ì•„ëž˜ì˜ ì˜ˆ 1ê³¼ ì˜ˆ 2ì˜ enqueue(), dequeue(), peek() ì—°ì‚°ì„ ì°¨ë¡€ëŒ€ë¡œ ìˆ˜í–‰í•˜ì—¬ ê·¸ ê²°ê³¼ê°€ ë§žëŠ”ì§€
+ì¶œë ¥í•˜ì—¬ í™•ì¸í•œë‹¤. */
 
 typedef int element;
 
