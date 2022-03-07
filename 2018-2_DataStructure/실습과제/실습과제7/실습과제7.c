@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-/* 1) Main() ÇÔ¼ö¿¡¼­ ¾Æ·¡¿Í °°Àº °£´ÜÇÑ ¼ö½ÄÇ¥ÇöÆ®¸®¸¦ ¿¬°á¸®½ºÆ®·Î ¸¸µé°í,
-2) ÀÌ ¼ö½ÄÇ¥ÇöÆ®¸®¿¡ ´ëÇØ °¢°¢ Áß¼øÀ§(inorder), ÈÄ¼øÀ§(postorder), Àü¼øÀ§(preorder) ¿îÇàÀ» Àç±ÍÀûÀ¸·Î
-¼öÇàÇÏ¿© Áß¼øÀ§(infix) Ç¥±â ¹× Àü¼øÀ§(prefix) Ç¥±â¿Í ÈÄ¼øÀ§(postfix) Ç¥±â °á°ú°¡ ¸Â´ÂÁö È®ÀÎÇÑ´Ù. */
+/* 1) Main() í•¨ìˆ˜ì—ì„œ ì•„ë˜ì™€ ê°™ì€ ê°„ë‹¨í•œ ìˆ˜ì‹í‘œí˜„íŠ¸ë¦¬ë¥¼ ì—°ê²°ë¦¬ìŠ¤íŠ¸ë¡œ ë§Œë“¤ê³ ,
+2) ì´ ìˆ˜ì‹í‘œí˜„íŠ¸ë¦¬ì— ëŒ€í•´ ê°ê° ì¤‘ìˆœìœ„(inorder), í›„ìˆœìœ„(postorder), ì „ìˆœìœ„(preorder) ìš´í–‰ì„ ì¬ê·€ì ìœ¼ë¡œ
+ìˆ˜í–‰í•˜ì—¬ ì¤‘ìˆœìœ„(infix) í‘œê¸° ë° ì „ìˆœìœ„(prefix) í‘œê¸°ì™€ í›„ìˆœìœ„(postfix) í‘œê¸° ê²°ê³¼ê°€ ë§ëŠ”ì§€ í™•ì¸í•œë‹¤. */
 
 typedef struct TreeNode {
 	int data;
 	struct TreeNode *left, *right;
 } TreeNode;
-//Æ®¸®³ëµå struct
+//íŠ¸ë¦¬ë…¸ë“œ struct
 
 TreeNode n1 = { 'a', NULL, NULL };
 TreeNode n2 = { 'b', NULL, NULL };
@@ -18,7 +18,7 @@ TreeNode n5 = { 'd', NULL, NULL };
 TreeNode n6 = { '/', &n4, &n5 };
 TreeNode n7 = { '+', &n3, &n6 };
 TreeNode *exp = &n7;
-//¼ö½ÄÇ¥Çö Æ®¸® ±¸¼º
+//ìˆ˜ì‹í‘œí˜„ íŠ¸ë¦¬ êµ¬ì„±
 
 void inorder(TreeNode *root) {
 	if (root) {
@@ -60,13 +60,13 @@ int evaluate(TreeNode *root) {
 }
 
 int main(void) {
-	printf("Áß¼øÀ§ ¿îÇà = ");
+	printf("ì¤‘ìˆœìœ„ ìš´í–‰ = ");
 	inorder(exp);
 	printf("\n");
-	printf("ÈÄ¼øÀ§ ¿îÇà = ");
+	printf("í›„ìˆœìœ„ ìš´í–‰ = ");
 	postorder(exp);
 	printf("\n");
-	printf("Àü¼øÀ§ ¿îÇà = ");
+	printf("ì „ìˆœìœ„ ìš´í–‰ = ");
 	preorder(exp);
 	printf("\n");
 }
