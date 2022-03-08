@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* 1) ³ëµåÀÇ »ðÀÔ¿¡ ÀÇÇØ¼­ ÀÌÁøÅ½»öÆ®¸®¸¦ ±¸¼ºÇÑ´Ù(¿¬°á¸®½ºÆ®¸¦ »ç¿ë).
-2) »õ·Î¿î ³ëµå¸¦ »ðÀÔÇÒ ¶§¸¶´Ù ±¸¼ºµÈ ÀÌÁøÅ½»öÆ®¸®ÀÇ ³ëµå °³¼ö¿Í ³ôÀÌ¸¦ °¢°¢ ±¸ÇÏ°í Áß¼øÀ§ ¿îÇàÀ» ÇÏ
-¿© ±× °á°ú¸¦ È®ÀÎÇÑ´Ù. */
+/* 1) ë…¸ë“œì˜ ì‚½ìž…ì— ì˜í•´ì„œ ì´ì§„íƒìƒ‰íŠ¸ë¦¬ë¥¼ êµ¬ì„±í•œë‹¤(ì—°ê²°ë¦¬ìŠ¤íŠ¸ë¥¼ ì‚¬ìš©).
+2) ìƒˆë¡œìš´ ë…¸ë“œë¥¼ ì‚½ìž…í•  ë•Œë§ˆë‹¤ êµ¬ì„±ëœ ì´ì§„íƒìƒ‰íŠ¸ë¦¬ì˜ ë…¸ë“œ ê°œìˆ˜ì™€ ë†’ì´ë¥¼ ê°ê° êµ¬í•˜ê³  ì¤‘ìˆœìœ„ ìš´í–‰ì„ í•˜
+ì—¬ ê·¸ ê²°ê³¼ë¥¼ í™•ì¸í•œë‹¤. */
 
 typedef struct TreeNode {
 	int key;
@@ -78,9 +78,9 @@ int main(void) {
 
 		insert_node(&root, a);
 
-		printf("³ëµå °³¼ö = %d\n", get_node_count(root));
-		printf("³ôÀÌ = %d\n", get_height(root) - 1);
-		printf("Áß¼øÀ§ ¿îÇà = ");
+		printf("ë…¸ë“œ ê°œìˆ˜ = %d\n", get_node_count(root));
+		printf("ë†’ì´ = %d\n", get_height(root) - 1);
+		printf("ì¤‘ìˆœìœ„ ìš´í–‰ = ");
 		inorder(root);
 		printf("\n\n");
 
