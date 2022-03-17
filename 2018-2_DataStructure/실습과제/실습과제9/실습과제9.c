@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* 1) ÆÄÀÏ·ÎºÎÅÍ µ¥ÀÌÅÍ¸¦ ÀÔ·Â ¹Þ¾Æ¼­ ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄÇÏ´Â ´Ü¼ø Á¤·Ä ¾Ë°í¸®Áò µÎ°¡Áö(»ðÀÔ Á¤·Ä°ú ¹öºí Á¤·Ä)
-¸¦ °¢°¢ ±¸ÇöÇÑ´Ù.
-2) ÁÖ¾îÁö´Â ÀÔ·Â ÆÄÀÏÀº ¡°input1.txt¡±, ¡°input2.txt¡±, ¡°input3.txt¡±ÀÌ¸ç Ã¹ ÁÙ¿¡´Â Á¤·ÄÇÒ µ¥ÀÌÅÍÀÇ °³¼ö, µÎ¹øÂ° ÁÙ
-ºÎÅÍ´Â Á¤·ÄÇÒ µ¥ÀÌÅÍµéÀÌ ºóÄ­¿¡ ÀÇÇØ ³ª´©¾îÁ® ³ª¿­µÇ¾î ÀÖ´Ù. (ÃÖ´ë 10,000°³)
-3) °¢ ¾Ë°í¸®Áò ¹× ÆÄÀÏ º°·Î Á¤·ÄÀ» À§ÇØ ½ÇÇàÇÑ ºñ±³ È½¼ö¿Í Á¤·Ä °á°ú(¾ÕºÎºÐ 10°³¿Í µÞºÎºÐ 10°³)¸¦ È­¸é¿¡ Ãâ
-·ÂÇÑ´Ù. */
+/* 1) íŒŒì¼ë¡œë¶€í„° ë°ì´í„°ë¥¼ ìž…ë ¥ ë°›ì•„ì„œ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•˜ëŠ” ë‹¨ìˆœ ì •ë ¬ ì•Œê³ ë¦¬ì¦˜ ë‘ê°€ì§€(ì‚½ìž… ì •ë ¬ê³¼ ë²„ë¸” ì •ë ¬)
+ë¥¼ ê°ê° êµ¬í˜„í•œë‹¤.
+2) ì£¼ì–´ì§€ëŠ” ìž…ë ¥ íŒŒì¼ì€ â€œinput1.txtâ€, â€œinput2.txtâ€, â€œinput3.txtâ€ì´ë©° ì²« ì¤„ì—ëŠ” ì •ë ¬í•  ë°ì´í„°ì˜ ê°œìˆ˜, ë‘ë²ˆì§¸ ì¤„
+ë¶€í„°ëŠ” ì •ë ¬í•  ë°ì´í„°ë“¤ì´ ë¹ˆì¹¸ì— ì˜í•´ ë‚˜ëˆ„ì–´ì ¸ ë‚˜ì—´ë˜ì–´ ìžˆë‹¤. (ìµœëŒ€ 10,000ê°œ)
+3) ê° ì•Œê³ ë¦¬ì¦˜ ë° íŒŒì¼ ë³„ë¡œ ì •ë ¬ì„ ìœ„í•´ ì‹¤í–‰í•œ ë¹„êµ íšŸìˆ˜ì™€ ì •ë ¬ ê²°ê³¼(ì•žë¶€ë¶„ 10ê°œì™€ ë’·ë¶€ë¶„ 10ê°œ)ë¥¼ í™”ë©´ì— ì¶œ
+ë ¥í•œë‹¤. */
 
 int compare = 0;
 
@@ -66,7 +66,7 @@ int main() {
 
 	memcpy(expb, expi, n * sizeof(int));
 
-	printf("1. ÀÔ·Â ÆÄÀÏ (\"input1.txt\")\n");
+	printf("1. ìž…ë ¥ íŒŒì¼ (\"input1.txt\")\n");
 	printf("%d\n", n);
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", expi[i]);
@@ -76,9 +76,9 @@ int main() {
 		printf("%d ", expi[i]);
 	}printf("\n");
 
-	printf("Ãâ·Â\n");
+	printf("ì¶œë ¥\n");
 	insertion_sort(expi, n);
-	printf("»ðÀÔ Á¤·Ä °á°ú = ");
+	printf("ì‚½ìž… ì •ë ¬ ê²°ê³¼ = ");
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", expi[i]);
 	}
@@ -86,11 +86,11 @@ int main() {
 	for (int i = n - 10; i < n; i++) {
 		printf("%d ", expi[i]);
 	}
-	printf("\nºñ±³ È½¼ö = %d\n", compare);
+	printf("\në¹„êµ íšŸìˆ˜ = %d\n", compare);
 
 
 	bubble_sort(expb, n);
-	printf("¹öºí Á¤·Ä °á°ú = ");
+	printf("ë²„ë¸” ì •ë ¬ ê²°ê³¼ = ");
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", expb[i]);
 	}
@@ -98,7 +98,7 @@ int main() {
 	for (int i = n - 10; i < n; i++) {
 		printf("%d ", expb[i]);
 	}
-	printf("\nºñ±³ È½¼ö = %d\n\n", compare);
+	printf("\në¹„êµ íšŸìˆ˜ = %d\n\n", compare);
 
 	i = 0;
 	fp2 = fopen("input2.txt", "r");
@@ -115,7 +115,7 @@ int main() {
 
 	memcpy(expb, expi, n * sizeof(int));
 
-	printf("2. ÀÔ·Â ÆÄÀÏ (\"input2.txt\")\n");
+	printf("2. ìž…ë ¥ íŒŒì¼ (\"input2.txt\")\n");
 	printf("%d\n", n);
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", expi[i]);
@@ -125,9 +125,9 @@ int main() {
 		printf("%d ", expi[i]);
 	}printf("\n");
 
-	printf("Ãâ·Â\n");
+	printf("ì¶œë ¥\n");
 	insertion_sort(expi, n);
-	printf("»ðÀÔ Á¤·Ä °á°ú = ");
+	printf("ì‚½ìž… ì •ë ¬ ê²°ê³¼ = ");
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", expi[i]);
 	}
@@ -135,11 +135,11 @@ int main() {
 	for (int i = n - 10; i < n; i++) {
 		printf("%d ", expi[i]);
 	}
-	printf("\nºñ±³ È½¼ö = %d\n", compare);
+	printf("\në¹„êµ íšŸìˆ˜ = %d\n", compare);
 
 
 	bubble_sort(expb, n);
-	printf("¹öºí Á¤·Ä °á°ú = ");
+	printf("ë²„ë¸” ì •ë ¬ ê²°ê³¼ = ");
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", expb[i]);
 	}
@@ -147,7 +147,7 @@ int main() {
 	for (int i = n - 10; i < n; i++) {
 		printf("%d ", expb[i]);
 	}
-	printf("\nºñ±³ È½¼ö = %d\n\n", compare);
+	printf("\në¹„êµ íšŸìˆ˜ = %d\n\n", compare);
 
 
 	i = 0;
@@ -166,7 +166,7 @@ int main() {
 
 	memcpy(expb, expi, n * sizeof(int));
 
-	printf("3. ÀÔ·Â ÆÄÀÏ (\"input3.txt\")\n");
+	printf("3. ìž…ë ¥ íŒŒì¼ (\"input3.txt\")\n");
 	printf("%d\n", n);
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", expi[i]);
@@ -176,9 +176,9 @@ int main() {
 		printf("%d ", expi[i]);
 	}printf("\n");
 
-	printf("Ãâ·Â\n");
+	printf("ì¶œë ¥\n");
 	insertion_sort(expi, n);
-	printf("»ðÀÔ Á¤·Ä °á°ú = ");
+	printf("ì‚½ìž… ì •ë ¬ ê²°ê³¼ = ");
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", expi[i]);
 	}
@@ -186,11 +186,11 @@ int main() {
 	for (int i = n - 10; i < n; i++) {
 		printf("%d ", expi[i]);
 	}
-	printf("\nºñ±³ È½¼ö = %d\n", compare);
+	printf("\në¹„êµ íšŸìˆ˜ = %d\n", compare);
 
 
 	bubble_sort(expb, n);
-	printf("¹öºí Á¤·Ä °á°ú = ");
+	printf("ë²„ë¸” ì •ë ¬ ê²°ê³¼ = ");
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", expb[i]);
 	}
@@ -198,5 +198,5 @@ int main() {
 	for (int i = n - 10; i < n; i++) {
 		printf("%d ", expb[i]);
 	}
-	printf("\nºñ±³ È½¼ö = %d\n\n", compare);
+	printf("\në¹„êµ íšŸìˆ˜ = %d\n\n", compare);
 }
