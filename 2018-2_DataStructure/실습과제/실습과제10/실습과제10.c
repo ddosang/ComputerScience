@@ -3,7 +3,7 @@
 #include <string.h>
 #define SWAP(x,y,t) ((t)=(x), (x)=(y), (y)= (t))
 
-//ÄüÁ¤·Ä, ÈüÁ¤·Ä
+//í€µì •ë ¬, í™ì •ë ¬
 
 int count = 0;
 
@@ -62,7 +62,7 @@ int main() {
 	fclose(fp1);
 
 
-	printf("1. ÀÔ·Â ÆÄÀÏ (\"input1.txt\")\n");
+	printf("1. ì…ë ¥ íŒŒì¼ (\"input1.txt\")\n");
 	printf("%d\n", n);
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", exp[i]);
@@ -72,9 +72,9 @@ int main() {
 		printf("%d ", exp[i]);
 	}printf("\n");
 
-	printf("Ãâ·Â\n");
+	printf("ì¶œë ¥\n");
 	quick_sort(exp, 0, n-1);
-	printf("Á¤·Ä °á°ú = ");
+	printf("ì •ë ¬ ê²°ê³¼ = ");
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", exp[i]);
 	}
@@ -82,7 +82,7 @@ int main() {
 	for (int i = n - 10; i < n; i++) {
 		printf("%d ", exp[i]);
 	}
-	printf("\nºñ±³ È½¼ö = %dÈ¸\n", count);
+	printf("\në¹„êµ íšŸìˆ˜ = %díšŒ\n", count);
 
 
 	i = 0;
@@ -98,7 +98,7 @@ int main() {
 	}
 	fclose(fp2);
 
-	printf("2. ÀÔ·Â ÆÄÀÏ (\"input2.txt\")\n");
+	printf("2. ì…ë ¥ íŒŒì¼ (\"input2.txt\")\n");
 	printf("%d\n", n);
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", exp[i]);
@@ -108,9 +108,9 @@ int main() {
 		printf("%d ", exp[i]);
 	}printf("\n");
 
-	printf("Ãâ·Â\n");
+	printf("ì¶œë ¥\n");
 	quick_sort(exp, 0, n-1);
-	printf("Á¤·Ä °á°ú = ");
+	printf("ì •ë ¬ ê²°ê³¼ = ");
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", exp[i]);
 	}
@@ -118,7 +118,7 @@ int main() {
 	for (int i = n - 10; i < n; i++) {
 		printf("%d ", exp[i]);
 	}
-	printf("\nºñ±³ È½¼ö = %dÈ¸\n", count);
+	printf("\në¹„êµ íšŸìˆ˜ = %díšŒ\n", count);
 
 
 
@@ -138,7 +138,7 @@ int main() {
 	fclose(fp3);
 
 
-	printf("3. ÀÔ·Â ÆÄÀÏ (\"input3.txt\")\n");
+	printf("3. ì…ë ¥ íŒŒì¼ (\"input3.txt\")\n");
 	printf("%d\n", n);
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", exp[i]);
@@ -148,9 +148,9 @@ int main() {
 		printf("%d ", exp[i]);
 	}printf("\n");
 
-	printf("Ãâ·Â\n");
+	printf("ì¶œë ¥\n");
 	quick_sort(exp, 0, n-1);
-	printf("Á¤·Ä °á°ú = ");
+	printf("ì •ë ¬ ê²°ê³¼ = ");
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", exp[i]);
 	}
@@ -158,7 +158,7 @@ int main() {
 	for (int i = n - 10; i < n; i++) {
 		printf("%d ", exp[i]);
 	}
-	printf("\nºñ±³ È½¼ö = %dÈ¸\n", count);
+	printf("\në¹„êµ íšŸìˆ˜ = %díšŒ\n", count);
 
 
 }
