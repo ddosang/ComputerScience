@@ -24,7 +24,7 @@ void init_graph(GraphType *g) {
 
 void insert_nvertex(GraphType *g, int n) {
 	if (g->n > MAX_VERTICES) {
-		printf("\n±×·¡ÇÁ : Á¤Á¡ °³¼ö ÃÊ°ú");
+		printf("\nê·¸ë˜í”„ : ì •ì  ê°œìˆ˜ ì´ˆê³¼");
 		return;
 	}
 	g->n = n;
@@ -39,7 +39,7 @@ void insert_nvertex(GraphType *g, int n) {
 void insert_edge(GraphType *g, int a, int b) {
 	GraphNode *node, *node1, *node2;
 	if (a >= g->n || b >= g->n) {
-		printf("\n±×·¡ÇÁ : Á¤Á¡¹øÈ£ ¿À·ù");
+		printf("\nê·¸ë˜í”„ : ì •ì ë²ˆí˜¸ ì˜¤ë¥˜");
 		return;
 	}
 	node = (GraphNode *)malloc(sizeof(GraphNode));
@@ -82,7 +82,7 @@ void dfsAll(GraphType *g) {
 	}
 	for (int i = 0; i < g->n; i++) {
 		if (!visited[i]) {
-			printf("¿¬°á¼ººĞ %d : ", l++);
+			printf("ì—°ê²°ì„±ë¶„ %d : ", l++);
 			dfs_list(g, i);
 			printf("\n");
 		}
@@ -92,11 +92,11 @@ void dfsAll(GraphType *g) {
 
 int main() {
 	GraphType *g = (GraphType *)malloc(sizeof(GraphType));
-	int a, b, n, m, i = 0; //n : Á¤Á¡ÀÇ °³¼ö m: ¿¡ÁöÀÇ °³¼ö
+	int a, b, n, m, i = 0; //n : ì •ì ì˜ ê°œìˆ˜ m: ì—ì§€ì˜ ê°œìˆ˜
 
 
-	//Ã¹¹øÂ° ÆÄÀÏ graph1.txt
-	printf("1. ÀÔ·ÂÆÄÀÏ : graph1.txt\n");
+	//ì²«ë²ˆì§¸ íŒŒì¼ graph1.txt
+	printf("1. ì…ë ¥íŒŒì¼ : graph1.txt\n");
 	FILE *fp1 = fopen("graph1.txt", "r");
 
 	init_graph(g);
@@ -122,8 +122,8 @@ int main() {
 
 
 
-	//µÎ¹øÂ° ÆÄÀÏ graph2.txt
-	printf("2. ÀÔ·ÂÆÄÀÏ : graph2.txt\n");
+	//ë‘ë²ˆì§¸ íŒŒì¼ graph2.txt
+	printf("2. ì…ë ¥íŒŒì¼ : graph2.txt\n");
 	FILE *fp2 = fopen("graph2.txt", "r");
 
 	init_graph(g);
@@ -148,8 +148,8 @@ int main() {
 
 
 
-	//¼¼¹øÂ° ÆÄÀÏ graph3.txt
-	printf("3. ÀÔ·ÂÆÄÀÏ : graph3.txt\n");
+	//ì„¸ë²ˆì§¸ íŒŒì¼ graph3.txt
+	printf("3. ì…ë ¥íŒŒì¼ : graph3.txt\n");
 	FILE *fp3 = fopen("graph3.txt", "r");
 
 	init_graph(g);
