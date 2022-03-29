@@ -3,7 +3,7 @@
 #define MAX_VERTICES 100
 #define _CRT_NO_SECURE_WARNINGS
 
-//±×·¡ÇÁÀÇ ÀÎÁ¢¼ººĞ ±¸ÇÏ±â
+//ê·¸ë˜í”„ì˜ ì¸ì ‘ì„±ë¶„ êµ¬í•˜ê¸°
 
 bool visited[MAX_VERTICES];
 
@@ -14,7 +14,7 @@ typedef struct GraphType {
 
 GraphType *NewGraph(int n) {
 	if (n > MAX_VERTICES) {
-		printf("Çà·Ä »ı¼º ¹üÀ§ ¿À·ù\n");
+		printf("í–‰ë ¬ ìƒì„± ë²”ìœ„ ì˜¤ë¥˜\n");
 	}
 	else {
 		int i = 0;
@@ -57,7 +57,7 @@ void dfsAll(GraphType *g) {
 	}
 	for (int i = 0; i < g->n; i++) {
 		if (!visited[i]) {
-			printf("¿¬°á¼ººĞ %d : ", l++);
+			printf("ì—°ê²°ì„±ë¶„ %d : ", l++);
 			dfs_mat(g, i);
 			printf("\n");
 		}
@@ -65,10 +65,10 @@ void dfsAll(GraphType *g) {
 }
 
 int main() {
-	int a, b, n, m, i = 0; //n : Á¤Á¡ÀÇ °³¼ö m: ¿¡ÁöÀÇ °³¼ö
+	int a, b, n, m, i = 0; //n : ì •ì ì˜ ê°œìˆ˜ m: ì—ì§€ì˜ ê°œìˆ˜
 
-   	//Ã¹¹øÂ° ÆÄÀÏ graph1.txt
-	printf("1. ÀÔ·Â ÆÄÀÏ : graph1.txt\n");
+   	//ì²«ë²ˆì§¸ íŒŒì¼ graph1.txt
+	printf("1. ì…ë ¥ íŒŒì¼ : graph1.txt\n");
 	FILE *fp1 = fopen("graph1.txt", "r");
 
 	fscanf(fp1, "%d", &n);
@@ -86,8 +86,8 @@ int main() {
 	dfsAll(g);
 	printf("\n");
 
-	//µÎ¹øÂ° ÆÄÀÏ graph2.txt
-	printf("2. ÀÔ·Â ÆÄÀÏ : graph2.txt\n");
+	//ë‘ë²ˆì§¸ íŒŒì¼ graph2.txt
+	printf("2. ì…ë ¥ íŒŒì¼ : graph2.txt\n");
 	FILE *fp2 = fopen("graph2.txt", "r");
 
 	fscanf(fp2, "%d", &n);
@@ -106,8 +106,8 @@ int main() {
 	printf("\n");
 
 
-	//¼¼¹øÂ° ÆÄÀÏ graph3.txt
-	printf("3. ÀÔ·Â ÆÄÀÏ : graph3.txt\n");
+	//ì„¸ë²ˆì§¸ íŒŒì¼ graph3.txt
+	printf("3. ì…ë ¥ íŒŒì¼ : graph3.txt\n");
 	FILE *fp3 = fopen("graph3.txt", "r");
 
 	fscanf(fp3, "%d", &n);
