@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <math.h>
 #define MAX 500000
-//500000ÀÌ»óµµ ¿À·ù°¡ ³ªÁö ¾Ê°í µ¹¾Æ°¡±ä ÇÏ´Âµ¥
-//ÇÁ·Î±×·¥ ½ÇÇà¿¡ ³Ê¹« ¿À·£ ½Ã°£ÀÌ ¼Ò¿äµÇ¾î 500000À¸·Î ÇÏ¿´´Ù.
+//500000ì´ìƒë„ ì˜¤ë¥˜ê°€ ë‚˜ì§€ ì•Šê³  ëŒì•„ê°€ê¸´ í•˜ëŠ”ë°
+//í”„ë¡œê·¸ë¨ ì‹¤í–‰ì— ë„ˆë¬´ ì˜¤ëœ ì‹œê°„ì´ ì†Œìš”ë˜ì–´ 500000ìœ¼ë¡œ í•˜ì˜€ë‹¤.
 
-//ÀÌÁø Å½»ö°ú º¸°£ Å½»ö
+//ì´ì§„ íƒìƒ‰ê³¼ ë³´ê°„ íƒìƒ‰
 
 int comp;
 
@@ -27,7 +27,7 @@ int* make_input(int n) {
 	}
 
 	return list;
-}//n°³ÀÇ ¼Ò¼ö¸¦ ¹è¿­¿¡ ÀúÀåÇÏ´Â ÇÔ¼ö
+}//nê°œì˜ ì†Œìˆ˜ë¥¼ ë°°ì—´ì— ì €ì¥í•˜ëŠ” í•¨ìˆ˜
 
 int *list = make_input(MAX);
 
@@ -45,7 +45,7 @@ int search_binary(int key, int low, int high) {
 		}
 	}
 	return -1;
-}//ÀÌÁø Å½»ö ÇÔ¼ö
+}//ì´ì§„ íƒìƒ‰ í•¨ìˆ˜
 
 int search_interpolation(int key, int n) {
 	comp = 0;
@@ -65,7 +65,7 @@ int search_interpolation(int key, int n) {
 	}
 	if (list[low] == key) return low;
 	else return -1;
-}//º¸°£ Å½»ö ÇÔ¼ö
+}//ë³´ê°„ íƒìƒ‰ í•¨ìˆ˜
 
 int main() {
 	int key = 153120;
