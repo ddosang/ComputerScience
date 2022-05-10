@@ -2,12 +2,15 @@
 
 명확성  
 
-(a) 최대 값은 2인가? -> 맞다 아니다 
+(a) 최대 값은 2인가? 라는 말이 모호함.
 (b) 10번 명령문이 뭔지 모름  
 
 
 ### 2번
 
+다항식 계산 - Horner 의 법칙 이용  
+
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/02.c)
 
 
 ### 3번
