@@ -1,3 +1,5 @@
+## 1.3
+
 ### 1번
 <hr>
 명확성  
@@ -111,6 +113,94 @@ x, y, z 를 오름차순으로 출력
 
 [코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-12.c)
 
+<br><br>
+
+
+## 1.5
+
+### 1번
+
+NaturalNumber ADT 에 Predecessor, IsGreater, Multiply, Divide 연산자 추가
+
+```c
+Predecessor(x) :== if (x > 0) return x - 1
+IsGreater(x, y) :== if (x < 0) return error
+                    if (y < 0) return error
+                    if (x > y) return TRUE
+                    return FALSE
+Multiply(x, y) :== if (x < 0) return error
+                   if (y < 0) return error
+                   if (x * y <= INT_MAX) return x * y
+                   return INT_MAX
+Divide(x, y) :== if (x < 0) return error
+                 if (y =< 0) return error
+                 return x / y
+```
+
 <br>
 
+### 2번
 
+```c
+ADT Set
+objects: 0과 INT_MAX 사이에 있는 정수.
+
+
+Create() :== {}
+IsEmpty(s) :== if (s == {}) return TRUE
+               else return FALSE
+Insert(x, s) :== if (!IsIn(x, s)) s = s + x
+Remove(x, s) :== if (IsIn(x, s)) s = s - x
+IsIn(x, s) :== if (x in s) return TRUE
+               else return FALSE
+Union(s1, s2) :== s1 + s2 - Intersection (s1, s2)
+Intersection(s1, s2) :== if (IsIn(tail(x), s1) and (IsIn(tail(x), s2))) s + x
+                         return x
+Difference(s1, s2) :== s1 - Intersection(s1, s2)
+```
+
+
+<br>
+
+### 3번
+
+```c
+ADT Bag
+objects: 0과 INT_MAX 사이에 있는 정수.
+
+
+Create() :== {}
+IsEmpty(s) :== if (s == {}) return TRUE
+               else return FALSE
+Insert(x, s) :==  s = s + x
+Remove(x, s) :== if (IsIn(x, s)) s = s - x
+IsIn(x, s) :== if (x in s) return TRUE
+               else return FALSE
+```
+
+
+
+<br>
+
+### 4번
+
+```c
+ADT Boolean
+objects: TRUE, FALSE
+
+
+And(x, y) :== if (not x) return FALSE
+              if (not y) return FALSE
+              return TRUE
+Or(x, y) :== if (x) return TRUE
+             if (y) return TRUE
+             return FALSE
+Not(x) :== if (x) return FALSE
+           else return TRUE
+Xor(x, y) :== if (x == y) return FALSE
+              else return TRUE
+```
+
+
+
+<br><br>
