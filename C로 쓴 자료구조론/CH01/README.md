@@ -79,6 +79,10 @@ x, y, z 를 오름차순으로 출력
 ### 9번
 <hr>
 
+반복, 재귀로 이항계수 nCm 구현  
+
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-09.c)
+
 
 <br>
 
