@@ -29,7 +29,7 @@ n개의 Boolean 가능한 tuple 전부 출력
 ### 4번
 <hr>
 
-x, y, z 를 오름 차순으로 출력  
+x, y, z 를 오름차순으로 출력  
 
 [코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-04.c)
 
