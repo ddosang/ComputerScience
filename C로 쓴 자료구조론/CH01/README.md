@@ -19,6 +19,10 @@
 ### 3번
 <hr>
 
+n개의 Boolean 가능한 tuple 전부 출력하기
+
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01)
+
 
 <br>
 
