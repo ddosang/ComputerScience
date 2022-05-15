@@ -11,7 +11,7 @@
 <hr>
 다항식 계산 - Horner 의 법칙 이용  
 
-[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/02.c)
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-02.c)
 
 
 <br>
@@ -19,15 +19,19 @@
 ### 3번
 <hr>
 
-n개의 Boolean 가능한 tuple 전부 출력하기
+n개의 Boolean 가능한 tuple 전부 출력  
 
-[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01)
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-03.c)
 
 
 <br>
 
 ### 4번
 <hr>
+
+x, y, z 를 오름 차순으로 출력  
+
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-04.c)
 
 
 <br>
