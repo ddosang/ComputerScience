@@ -1,4 +1,6 @@
 ## 1.3
+<hr>
+<br>
 
 ### 1번
 <hr>
@@ -117,9 +119,11 @@ x, y, z 를 오름차순으로 출력
 
 
 ## 1.5
+<hr>
+<br>
 
 ### 1번
-
+<hr>
 NaturalNumber ADT 에 Predecessor, IsGreater, Multiply, Divide 연산자 추가
 
 ```c
@@ -140,7 +144,7 @@ Divide(x, y) :== if (x < 0) return error
 <br>
 
 ### 2번
-
+<hr>
 ```c
 ADT Set
 objects: 0과 INT_MAX 사이에 있는 정수.
@@ -163,7 +167,7 @@ Difference(s1, s2) :== s1 - Intersection(s1, s2)
 <br>
 
 ### 3번
-
+<hr>
 ```c
 ADT Bag
 objects: 0과 INT_MAX 사이에 있는 정수.
@@ -205,10 +209,12 @@ Xor(x, y) :== if (x == y) return FALSE
 
 <br><br>
 
-## 1.5
+## 1.5 - 공간복잡도
+<hr>
+<br>
 
 ### 1번
-
+<hr>
 1-3-07 팩토리얼 공간 복잡도 계산  
 
 반복 : 0
@@ -217,7 +223,7 @@ Xor(x, y) :== if (x == y) return FALSE
 <br>
 
 ### 2번
-
+<hr>
 1-3-08 피보나치 공간 복잡도 계산  
 
 반복  
@@ -231,7 +237,7 @@ Xor(x, y) :== if (x == y) return FALSE
 <br>
 
 ### 3번
-
+<hr>
 1-3-09 이항계수 공간 복잡도 계산  
 
 반복  
@@ -246,7 +252,7 @@ Xor(x, y) :== if (x == y) return FALSE
 <br>
 
 ### 4번
-
+<hr>
 1-3-05 비둘기 집 원칙 공간 복잡도 계산  
 
 - inputs, ouputs MAX_COUNT 개, num 1개, result 1개, i 1개
@@ -255,7 +261,7 @@ Xor(x, y) :== if (x == y) return FALSE
 <br>
 
 ### 5번
-
+<hr>
 1-3-12 멱집합 공간 복잡도 계산  
 
 - n, N, check[MAX_COUNT], 재귀 주소 2^n 개
@@ -263,3 +269,5 @@ Xor(x, y) :== if (x == y) return FALSE
 
 
 <br>
+
+
