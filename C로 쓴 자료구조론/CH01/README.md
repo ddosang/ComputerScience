@@ -41,13 +41,17 @@ x, y, z 를 오름차순으로 출력
 
 비둘기의 집 원칙 - 입력 값이 다른데 결과 값은 같은 a, b 를 찾는 프로그램을 작성하라.  
 
-[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01)
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-05.c)
 
 
 <br>
 
 ### 6번
 <hr>
+
+어떤 양의 정수 n의 약수의 합이 n과 같은지를 알아보는 프로그램을 작성하라.
+
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-06.c)
 
 
 <br>
