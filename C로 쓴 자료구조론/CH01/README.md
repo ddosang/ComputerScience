@@ -89,18 +89,27 @@ x, y, z 를 오름차순으로 출력
 ### 10번
 <hr>
 
+반복, 재귀로 Ackermann 함수 A(m, n) 구현  
+
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-10.c)
 
 <br>
 
 ### 11번
 <hr>
 
+하노이의 탑 옮기는 횟수 구하는 재귀 함수  
+
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-11.c)
 
 <br>
 
 ### 12번
 <hr>
 
+부분 집합을 구하는 재귀 함수  
+
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-12.c)
 
 <br>
 
