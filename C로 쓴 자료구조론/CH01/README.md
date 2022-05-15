@@ -39,6 +39,9 @@ x, y, z 를 오름차순으로 출력
 ### 5번
 <hr>
 
+비둘기의 집 원칙 - 입력 값이 다른데 결과 값은 같은 a, b 를 찾는 프로그램을 작성하라.  
+
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01)
 
 
 <br>
