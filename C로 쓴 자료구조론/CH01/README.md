@@ -49,7 +49,7 @@ x, y, z 를 오름차순으로 출력
 ### 6번
 <hr>
 
-어떤 양의 정수 n의 약수의 합이 n과 같은지를 알아보는 프로그램을 작성하라.
+어떤 양의 정수 n의 약수의 합이 n과 같은지를 알아보는 프로그램을 작성하라.  
 
 [코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-06.c)
 
@@ -59,6 +59,9 @@ x, y, z 를 오름차순으로 출력
 ### 7번
 <hr>
 
+반복, 재귀로 팩토리얼 함수 구현  
+
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-07.c)
 
 
 <br>
