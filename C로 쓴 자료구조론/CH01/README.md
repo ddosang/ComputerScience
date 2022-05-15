@@ -69,6 +69,10 @@ x, y, z 를 오름차순으로 출력
 ### 8번
 <hr>
 
+반복, 재귀로 피보나치 함수 구현  
+
+[코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-08.c)
+
 
 <br>
 
