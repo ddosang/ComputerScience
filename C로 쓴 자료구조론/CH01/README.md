@@ -107,7 +107,7 @@ x, y, z 를 오름차순으로 출력
 ### 12번
 <hr>
 
-부분 집합을 구하는 재귀 함수  
+부분 집합의 모든 경우의 집합인 멱집합을 구하는 재귀 함수  
 
 [코드](https://github.com/ddosang/ComputerScience/tree/main/C로%20쓴%20자료구조론/CH01/1-3-12.c)
 
