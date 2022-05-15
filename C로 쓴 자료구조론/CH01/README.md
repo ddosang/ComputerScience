@@ -209,35 +209,57 @@ Xor(x, y) :== if (x == y) return FALSE
 
 ### 1번
 
-1-3-07 공간 복잡도 계산  
+1-3-07 팩토리얼 공간 복잡도 계산  
 
-
+반복 : 0
 
 
 <br>
 
 ### 2번
 
-1-3-08 공간 복잡도 계산  
+1-3-08 피보나치 공간 복잡도 계산  
+
+반복  
+- n 1개, fact 1개, i 1개 
+- S(n) = 3 * sizeof int (고정)
+
+재귀  
+- n 1개, 재귀 복귀 주소 1개
+- S(n) = 2 * sizeof int * n (가변)
 
 <br>
 
 ### 3번
 
-1-3-09 공간 복잡도 계산  
+1-3-09 이항계수 공간 복잡도 계산  
+
+반복  
+- first 1개, second 1개, res 1개, i 1개
+- S(n) = 4 * sizeof int (고정)
+
+재귀  
+- n 1개, 재귀 복귀 주소 1개 를 2번씩 호출
+- S(n) = 2 * 2 * sizeof int * n (가변)
+
 
 <br>
 
 ### 4번
 
-1-3-05 공간 복잡도 계산  
+1-3-05 비둘기 집 원칙 공간 복잡도 계산  
+
+- inputs, ouputs MAX_COUNT 개, num 1개, result 1개, i 1개
+- S(n) = (2 * MAX_COUNT + 3) * sizeof int (고정)
 
 <br>
 
 ### 5번
 
-1-3-12 공간 복잡도 계산  
+1-3-12 멱집합 공간 복잡도 계산  
 
+- n, N, check[MAX_COUNT], 재귀 주소 2^n 개
+- S(n) = (2 + MAX_COUNT + (2^n)) * sizeof int (고정 + 가변)
 
 
 <br>
